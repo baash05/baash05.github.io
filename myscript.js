@@ -9,3 +9,7 @@ function loadText(){
   element.value = localStorage.getItem("thoughts");
   element.focus();
 }
+
+function loadMenu(){
+
+}

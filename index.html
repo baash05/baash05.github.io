@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head lang="en">
     <meta charset="utf-8">
-    <title>Goblin Life</title>
-    <meta name="description" content="A shadow of ourselves that we can care for, and raise health and fit">
+    <title>Tiny Notes</title>
+    <meta name="description" content="A small notes app">
     <meta name="keywords" content="health, fitness, coach, virtual pet, ">
     <meta name="author" content="David Rawk">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,27 @@
         body { background: linear-gradient(to left, rgba(255,0,0,0), rgba(0,0,0,1)); }
     </style>
     <link rel="icon" href="fav.ico">
+    <link rel="manifest" href="/manifest.json">
   </head>
+
   <body onload="loadText()">
-    <h1>Goblin Life</h1>
     <div class='main'>
       <div>
         <textarea rows="20", id="myTextBox"></textarea>
       </div>
       <input type="submit", value="Save", onclick="storeText();"/>
-      
+
       <script src="myscript.js"></script>
     </div>
   </body>
   </html>
   <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                  .register('/sw.js', {updateViaCache: 'none'})
+                  .then(function() { console.log('[ServiceWorker] Registered'); });
+        }
+    });
+    </script>
