@@ -1,6 +1,6 @@
 //when you change these, also change the database.js
 var cacheName = 'Notes'; //changing this version will invalidate the cached app shell
-var version = "v1"
+var version = "v2"
 var filesToCache = ['/fav.ico', '/index.html', '/style.css', '/myscript.js'];
 
 if( 'function' === typeof importScripts) {
