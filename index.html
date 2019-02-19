@@ -7,13 +7,18 @@
     <meta name="keywords" content="health, fitness, coach, virtual pet, ">
     <meta name="author" content="David Rawk">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { background: linear-gradient(to left, rgba(255,0,0,0), rgba(0,0,0,1)); }
-    </style>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="manifest" href="/manifest.json">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000"/>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <!-- avoid the fav icon -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <link rel="icon" href="fav.ico">
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
   </head>
 
   <body >
@@ -27,8 +32,10 @@
       </div>
       <div class="landing_wrapper">
           <input type="checkbox" class="display_none view_toggle" checked=true id="show_menu"/>
-          <div class="landing_left togglable w3-bar-block w3-white" style="z-index: 1000;", id="menu">
-            LOADING NOTES...
+          <div class="landing_left togglable", id="menu">
+            <div style="width: 100%; text-align: center; margin-top: 20px">
+              <img src="images/icons/icon-192x192.png"/>
+            </div>
           </div>
         <div class="landing_right">
           <input type='hidden' id="id_field"/>
@@ -46,7 +53,7 @@
 
     document.addEventListener("DOMContentLoaded", function(){
       newNote();
-      setTimeout(function(){ fetchAll(loadMenu) }, (50));
+      setTimeout(function(){ fetchAll(loadMenu) }, (1000));
 
       if ('serviceWorker' in navigator) {
           navigator.serviceWorker
