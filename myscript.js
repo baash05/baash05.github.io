@@ -43,14 +43,28 @@ function loadMenu(records){
     ul.appendChild(label)
 
   records.forEach(function(record) {
+
     var label = newLabel(record.id ,
                   "hideMenu('show_menu'); readRecord("+record.id+", displayRecord)", 'menu_item',
                   'edit_scene')
     label.style = "padding: 5px 0; margin: 5px 0;"
-    label.innerHTML = ' 📄<span id="record_' +record.id+ '" style="white-space: nowrap;">'+record.text+ '</span>'
-    ul.appendChild(label)
+
+    label.innerHTML = ' 📄<span id="record_' +record.id+ '" style="white-space: nowrap;">'+truncateStr(record.text)+ '</span>'
+    var li = document.createElement('li')
+    li.appendChild(label)
+    ul.appendChild(li)
   });
 }
+
+function truncateStr(str) {
+  var length = 25;
+  var ending = ' ...';
+  if (str.length > length) {
+    return str.substring(0, 22) + ending;
+  } else {
+    return str;
+  }
+};
 
 function hideMenu(id){
   if(window.innerWidth > 600) return; //don't hide menu when user clicks

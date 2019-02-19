@@ -32,7 +32,7 @@
       </div>
       <div class="landing_wrapper">
           <input type="checkbox" class="display_none view_toggle" checked=true id="show_menu"/>
-          <div class="landing_left togglable", id="menu">
+          <div class="landing_left togglable" id="menu">
             <div style="width: 100%; text-align: center; margin-top: 20px">
               <img src="images/icons/icon-192x192.png"/>
             </div>
@@ -49,8 +49,6 @@
   <script src="myscript.js"></script>
   <script src="database.js"></script>
   <script>
-
-
     document.addEventListener("DOMContentLoaded", function(){
       newNote();
       setTimeout(function(){ fetchAll(loadMenu) }, (1000));
@@ -61,8 +59,4 @@
                   .then(function() { console.log('[ServiceWorker] Registered'); });
         }
     });
-
-
-
-
   </script>
