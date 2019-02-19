@@ -1,7 +1,7 @@
 //when you change these, also change the database.js
 var cacheName = 'Notes'; //changing this version will invalidate the cached app shell
-var version = "v2"
-var filesToCache = ['/fav.ico', '/index.html', '/style.css', '/myscript.js'];
+var version = "v3"
+var filesToCache = ['/fav.ico', '/index.html', '/style.css', '/myscript.js', 'images/icons/icon-192x192.png'];
 
 if( 'function' === typeof importScripts) {
   importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js');
